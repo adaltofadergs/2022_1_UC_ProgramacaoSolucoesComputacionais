@@ -51,3 +51,4 @@ int main()
     printf("Resultado: %f", result);
     return 0;
 }
+
