@@ -43,6 +43,15 @@ public class Tela {
         p3.imprimir();
         
         
+        Categoria cat1 = new Categoria();
+        cat1.id = 1;
+        cat1.nome = "Bebidas";
+        
+        Produto prod1 = new Produto("Caca-Cola", 6.99, 100);
+        prod1.categoria = cat1;
+        
+        prod1.imprimir();
+        
     }
     
 }
