@@ -7,7 +7,7 @@ package aula_oo;
 public class Pessoa {
     
     public int id;
-    public String nome;
+    protected String nome;
     public String fone;
     public Cidade cidade;
     

@@ -4,12 +4,19 @@ package aula_oo;
  *
  * @author adalto.selau
  */
+
+import pacote02.Classe01;
+import pacote02.Funcionario;
+
 public class Tela {
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        
+        // 12/05/2022
+        
         /*
         int idade = 36;
         double y = 1.5;
@@ -51,6 +58,25 @@ public class Tela {
         prod1.categoria = cat1;
         
         prod1.imprimir();
+        
+        
+        
+        
+        // 13/05/2022
+        System.out.println("-------13/05/2022----");
+        
+        Classe01 cla01 = new Classe01();
+        cla01.xPublico = 0;
+ //       cla01.xProtegido = 0;
+        
+        Funcionario f1 = new Funcionario();
+        
+        f1.setSalario( 1500.0 );
+        
+        System.out.println("Valor atual do salário: " 
+                + f1.getSalario() );
+ 
+        
         
     }
     
