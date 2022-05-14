@@ -2,6 +2,7 @@ package exemplo1;
 import java.util.Scanner;
 
 public class Pessoa {
+    
     private String nome;
     private int idade;
     private double salario;
@@ -29,6 +30,5 @@ public class Pessoa {
     private void aumento(){
         this.salario=this.salario*1.1;
     }
-
     
 }
