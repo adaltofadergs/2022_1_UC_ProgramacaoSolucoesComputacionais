@@ -14,7 +14,6 @@ public class Veiculo {
     protected String marca;
     public int ano;
     
-    
     // Métodos Construtores
     public Veiculo(){
         
@@ -39,16 +38,10 @@ public class Veiculo {
         this.id = (int) ( Math.random() * 1000 );
     }
     
-    
     public void acelerar(){
         System.out.println("O veículo acelerou!");
-        JOptionPane.showMessageDialog(null, 
-                        "O veículo " + 
-                        this.marca + 
-                        " acelerou!");
-    }
-     
-    
+        JOptionPane.showMessageDialog(null, "O veículo " + this.marca + " acelerou!");
+    } 
 }
 
 
