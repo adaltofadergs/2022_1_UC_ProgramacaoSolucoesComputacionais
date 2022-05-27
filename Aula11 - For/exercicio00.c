@@ -4,6 +4,7 @@ Construir um algoritmo que imprime os números de 1 a 10
 
 #include <stdio.h>
 
+
 int main()
 {
 	int i = 1;
