@@ -38,10 +38,42 @@ public class Veiculo {
         this.id = (int) ( Math.random() * 1000 );
     }
     
+    public void setMarca(String marca){
+        if( marca.isEmpty()  || marca.equals( " " )){
+            System.out.println("A marca deve ser preenchida corretamente!");
+        }else{
+            this.marca = marca;
+        }
+    }
+    
     public void acelerar(){
         System.out.println("O veículo acelerou!");
         JOptionPane.showMessageDialog(null, "O veículo " + this.marca + " acelerou!");
     } 
+    
+    public void cadastrar(){
+        String texto = "";
+        
+        try{
+            
+            texto += "Marca: " + this.marca;
+            texto += "\nAno: " + this.ano;
+            JOptionPane.showMessageDialog(null, texto);  
+            
+        }catch(Exception e){
+            System.out.println("Erro: " + e.toString() );
+        }
+        
+    }
+
+    @Override
+    public String toString() {
+        return "MARCA: " + this.marca + "\nAno: " + this.ano;
+    }
+    
+    
+    
+    
 }
 
 
