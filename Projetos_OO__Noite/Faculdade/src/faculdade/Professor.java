@@ -28,6 +28,21 @@ public class Professor extends Pessoa{
         Conexao.executar( sql );
     }
     
+    public void editar(){
+        String sql =  "UPDATE professor SET  "
+                    + " nome    = '" + this.getNome() +   "' ,  "
+                    + " email   = '" + this.getEmail() +  "' ,  "
+                    + " salario =  " + this.getSalario() +"     "
+                    + " WHERE idProfessor = " + this.getId();
+        Conexao.executar( sql );
+    }
+    
+    public static void excluir(int idProfessor){
+        String sql =  "DELETE FROM professor WHERE idProfessor = " + idProfessor;
+        Conexao.executar( sql );
+    }
+    
+    
     public static ArrayList<Professor> getProfessores(){
         ArrayList<Professor> lista = new ArrayList<>();
         
@@ -43,6 +58,7 @@ public class Professor extends Pessoa{
                     String email = rs.getString( "email" );
                     double salario = rs.getDouble( 4 );
                     Professor prof = new Professor(nome, email, salario);
+                    prof.setId( rs.getInt( "idProfessor" ) );
                     lista.add( prof );
                 }
             }catch(Exception e){
