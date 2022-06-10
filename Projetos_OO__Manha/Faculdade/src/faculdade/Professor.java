@@ -28,11 +28,24 @@ public class Professor extends Pessoa{
         Conexao.executar( sql );
     }
     
+    public void editar(){
+        String sql = " UPDATE professor SET  "
+                   + " nome    = '" + this.getNome()  +   "' , "
+                   + " email   = '" + this.getEmail() +   "' , " 
+                   + " salario =  " + this.getSalario() + "    "
+                   + " WHERE idProfessor = " + this.getId();
+        Conexao.executar( sql );
+    }
+    
+    public static void excluir( int idProfessor ){
+        String sql = " DELETE FROM professor WHERE idProfessor = " + idProfessor  ;
+        Conexao.executar( sql );
+    }
     
     public static ArrayList<Professor> getProfessores(){
         ArrayList<Professor> lista = new ArrayList<>();
         
-        String sql = " SELECT idProfessor, nome, email, salario FROM professor ";
+        String sql = " SELECT idProfessor, nome, email, salario FROM professor ORDER BY nome ";
         ResultSet rs = Conexao.consultar( sql );
         
         if( rs != null ){
@@ -42,16 +55,17 @@ public class Professor extends Pessoa{
                     String email = rs.getString( 3 );
                     double salario = rs.getDouble( "salario");
                     Professor prof = new Professor( nome, email  , salario );
+                    prof.setId( rs.getInt( 1 )  );
                     lista.add( prof );
-                    
                 }
             }catch(Exception e){
                 
             }
         }
-        
         return lista;
     }
+    
+    
     
     
    @Override
